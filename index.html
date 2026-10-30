@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Melhores do Ano 2026 · Pinguim Doidim</title>
+  <meta name="description" content="Cerimônia oficial e votação dos Melhores do Ano 2026 do clã Pinguim Doidim.">
+  <meta name="theme-color" content="#050a17">
+  <meta property="og:title" content="Melhores do Ano 2026 · Pinguim Doidim">
+  <meta property="og:description" content="A votação oficial do clã está aberta. Entre e lacre seus votos.">
+  <!-- Troque pelo endereço completo depois de publicar, ex.: https://seuusuario.github.io/melhores-do-ano/assets/img/compartilhar.jpg -->
+  <meta property="og:image" content="assets/img/compartilhar.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preload" href="assets/fonts/saira-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <div class="palco" aria-hidden="true">
+    <svg class="palco__grade" id="grade" xmlns="http://www.w3.org/2000/svg"></svg>
+    <img class="palco__fantasma" src="assets/img/mascote-ghost.png" alt="">
+    <div class="palco__feixes"><i></i><i></i></div>
+    <canvas class="palco__particulas" id="particulas"></canvas>
+    <div class="palco__vinheta"></div>
+  </div>
+
+  <header class="topo oculto" id="topo">
+    <button class="topo__marca" data-ir="abertura" aria-label="Voltar para a abertura">
+      <img src="assets/img/logo-256.png" alt="">
+      <span>Melhores do Ano<small>2026</small></span>
+    </button>
+    <nav class="topo__nav" aria-label="Etapas da cerimônia">
+      <button data-ir="cla">O clã</button>
+      <button data-ir="membros">Membros</button>
+      <button data-ir="premios">Troféus</button>
+      <button data-ir="votar">Votação</button>
+    </nav>
+    <button class="btn btn--linha btn--icone topo__som" id="botao-som" aria-label="Som ligado" title="Ligar ou desligar o som"></button>
+  </header>
+
+  <main class="app" id="app">
+    <section class="abertura" id="etapa-abertura" aria-label="Abertura"></section>
+    <section class="etapa" id="etapa-cla" aria-label="O clã"></section>
+    <section class="etapa" id="etapa-membros" aria-label="Os membros"></section>
+    <section class="etapa" id="etapa-premios" aria-label="Os troféus"></section>
+    <section class="etapa" id="etapa-entrar" aria-label="Entrar para votar"></section>
+    <section class="etapa etapa--votar" id="etapa-votar" aria-label="Votação"></section>
+    <section class="etapa" id="etapa-revisao" aria-label="Revisão dos votos"></section>
+    <section class="etapa" id="etapa-fim" aria-label="Votos lacrados"></section>
+    <section class="etapa" id="etapa-embreve" aria-label="A votação abre em breve"></section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/icones.js"></script>
+  <script src="js/trofeu.js"></script>
+  <script src="js/efeitos.js"></script>
+  <script src="js/backend.js"></script>
+  <script src="js/comum.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+rules_version = '2';
+
+// Regras do banco de votos. Cole no Firebase: Firestore Database → Regras → Publicar.
+// Troque SEU-EMAIL@gmail.com pelo(s) e-mail(s) da comissão (os mesmos de js/config.js).
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function logado() {
+      return request.auth != null && request.auth.token.email_verified == true;
+    }
+
+    function admin() {
+      return logado() && request.auth.token.email in ['SEU-EMAIL@gmail.com'];
+    }
+
+    // Para aceitar só e-mails do clã, troque "true" por:
+    // request.auth.token.email in ['email1@gmail.com', 'email2@gmail.com', ...]
+    function podeVotar() {
+      return true;
+    }
+
+    match /votos/{uid} {
+      // cada pessoa cria o próprio voto uma única vez
+      allow create: if logado() && podeVotar()
+        && request.auth.uid == uid
+        && request.resource.data.email == request.auth.token.email
+        && request.resource.data.respostas is map
+        && request.resource.data.keys().hasOnly(['email', 'membro', 'respostas', 'versao', 'enviadoEm']);
+
+      // a pessoa vê só o próprio voto; a comissão vê todos (na cerimônia)
+      allow get: if logado() && (request.auth.uid == uid || admin());
+      allow list: if admin();
+
+      // voto lacrado não muda nem some
+      allow update, delete: if false;
+    }
+  }
+}
