@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <title>Cerimônia de revelação · Melhores do Ano 2026</title>
+  <meta name="theme-color" content="#050a17">
+  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="preload" href="assets/fonts/saira-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="pagina-cerimonia">
+  <div class="palco" aria-hidden="true">
+    <svg class="palco__grade" id="grade" xmlns="http://www.w3.org/2000/svg"></svg>
+    <img class="palco__fantasma" src="assets/img/mascote-ghost.png" alt="">
+    <div class="palco__feixes"><i></i><i></i></div>
+    <canvas class="palco__particulas" id="particulas"></canvas>
+    <div class="palco__vinheta"></div>
+  </div>
+
+  <header class="topo" id="topo">
+    <span class="topo__marca">
+      <img src="assets/img/logo-256.png" alt="">
+      <span>Cerimônia de revelação<small>Melhores do Ano 2026</small></span>
+    </span>
+    <span class="topo__nav" id="topo-progresso"></span>
+    <button class="btn btn--linha btn--icone" id="botao-indice" aria-label="Todas as categorias" hidden></button>
+    <button class="btn btn--linha btn--icone topo__som" id="botao-som" aria-label="Som ligado"></button>
+  </header>
+
+  <main class="app" id="app">
+    <section class="etapa" id="c-portao" aria-label="Acesso da comissão"></section>
+    <section class="etapa" id="c-painel" aria-label="Painel da apuração"></section>
+    <section class="abertura" id="c-abertura" aria-label="Abertura da cerimônia"></section>
+    <section class="etapa" id="c-categoria" aria-label="Categoria"></section>
+    <section class="etapa" id="c-imperador" aria-label="Pinguim Imperador"></section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/dados.js"></script>
+  <script src="js/icones.js"></script>
+  <script src="js/trofeu.js"></script>
+  <script src="js/efeitos.js"></script>
+  <script src="js/backend.js"></script>
+  <script src="js/comum.js"></script>
+  <script src="js/cerimonia.js"></script>
+</body>
+</html>
